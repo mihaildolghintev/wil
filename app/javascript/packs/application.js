@@ -10,6 +10,9 @@ import "channels";
 
 import "stylesheets/application";
 
+import "trix"
+import "@rails/actiontext"
+
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
