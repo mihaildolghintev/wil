@@ -4,8 +4,8 @@
 
 @import "trix/dist/trix";
 
-.trix-content {
-	min-height: 20em;
+#trix-content {
+  min-height: 20em;
 }
 
 .trix-content pre {
@@ -13,4 +13,6 @@
   padding: 2em;
 }
 
-
+.trix-content > div {
+  font-size: 14px;
+}

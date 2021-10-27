@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   def index
-    @notes = Note.all
+    @q = Note.ransack(params[:q])
+    @notes = @q.result(distinct: true)
   end
 
   def new

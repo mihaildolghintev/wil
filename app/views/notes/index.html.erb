@@ -1,5 +1,21 @@
-<div>
-  <% @notes.each do |note| %>
-    <%= render 'notes/note', note: note %>
-  <% end %>
+<div class='grid grid-cols-2'>
+  <div class='flex items-center justify-center'>
+    <%= search_form_for @q do |f| %>
+      <div class="flex flex-col gap-2">
+        <%= f.label :title_or_content_body_cont %>
+        <%= f.search_field :title_or_content_body_cont, class: 'border rounded py-4 px-4' %>
+        <%= link_to 'Clear', notes_path, class: 'border rounded bg-yellow-100 py-4 px-4' %>
+      </div>
+    <% end %>
+  </div> 
+  <div>
+    <% if @notes.empty? %>
+      <div class="flex items-center justify-center h-full">
+        <div class='p-8 border border-dashed rounded'>No Data</div>
+      </div> 
+    <% end %>
+    <% @notes.each do |note| %>
+      <%= render 'notes/note', note: note %>
+    <% end %>
+  </div>
 </div>
